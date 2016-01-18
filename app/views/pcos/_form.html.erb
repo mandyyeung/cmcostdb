@@ -1,0 +1,125 @@
+<%= form_for(@pco) do |f| %>
+  <% if @pco.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pco.errors.count, "error") %> prohibited this pco from being saved:</h2>
+
+      <ul>
+      <% @pco.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :requested_by %><br>
+    <%= f.text_field :requested_by %>
+  </div>
+  <div class="field">
+    <%= f.label :project %><br>
+    <%= f.text_field :project %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :subcontractor %><br>
+    <%= f.text_field :subcontractor %>
+  </div>
+  <div class="field">
+    <%= f.label :trade %><br>
+    <%= f.text_field :trade %>
+  </div>
+  <div class="field">
+    <%= f.label :proposal_num %><br>
+    <%= f.text_field :proposal_num %>
+  </div>
+  <div class="field">
+    <%= f.label :ref_doc %><br>
+    <%= f.text_field :ref_doc %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :classification %><br>
+    <%= f.text_field :classification %>
+  </div>
+  <div class="field">
+    <%= f.label :work_completed %><br>
+    <%= f.check_box :work_completed %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance_claim %><br>
+    <%= f.check_box :insurance_claim %>
+  </div>
+  <div class="field">
+    <%= f.label :backcharge %><br>
+    <%= f.check_box :backcharge %>
+  </div>
+  <div class="field">
+    <%= f.label :filter %><br>
+    <%= f.text_field :filter %>
+  </div>
+  <div class="field">
+    <%= f.label :al %><br>
+    <%= f.text_field :al %>
+  </div>
+  <div class="field">
+    <%= f.label :proposal_recd %><br>
+    <%= f.date_select :proposal_recd %>
+  </div>
+  <div class="field">
+    <%= f.label :submitted_to_owner %><br>
+    <%= f.date_select :submitted_to_owner %>
+  </div>
+  <div class="field">
+    <%= f.label :approved_by_owner %><br>
+    <%= f.date_select :approved_by_owner %>
+  </div>
+  <div class="field">
+    <%= f.label :billed %><br>
+    <%= f.date_select :billed %>
+  </div>
+  <div class="field">
+    <%= f.label :approx_value %><br>
+    <%= f.text_field :approx_value %>
+  </div>
+  <div class="field">
+    <%= f.label :proposed_value %><br>
+    <%= f.text_field :proposed_value %>
+  </div>
+  <div class="field">
+    <%= f.label :submitted_value %><br>
+    <%= f.text_field :submitted_value %>
+  </div>
+  <div class="field">
+    <%= f.label :approved_value %><br>
+    <%= f.text_field :approved_value %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :engineer %><br>
+    <%= f.text_field :engineer %>
+  </div>
+  <div class="field">
+    <%= f.label :bp %><br>
+    <%= f.text_field :bp %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

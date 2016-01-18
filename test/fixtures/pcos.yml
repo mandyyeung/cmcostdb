@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 9.99
+  requested_by: MyString
+  project: MyString
+  date: 2016-01-18
+  status: MyString
+  subcontractor: MyString
+  trade: MyString
+  proposal_num: MyString
+  ref_doc: MyString
+  description: MyText
+  classification: MyString
+  work_completed: false
+  insurance_claim: false
+  backcharge: false
+  filter: MyString
+  al: MyString
+  proposal_recd: 2016-01-18
+  submitted_to_owner: 2016-01-18
+  approved_by_owner: 2016-01-18
+  billed: 2016-01-18
+  approx_value: 9.99
+  proposed_value: 9.99
+  submitted_value: 9.99
+  approved_value: 9.99
+  comments: MyText
+  engineer: MyString
+  bp: MyString
+
+two:
+  number: 9.99
+  requested_by: MyString
+  project: MyString
+  date: 2016-01-18
+  status: MyString
+  subcontractor: MyString
+  trade: MyString
+  proposal_num: MyString
+  ref_doc: MyString
+  description: MyText
+  classification: MyString
+  work_completed: false
+  insurance_claim: false
+  backcharge: false
+  filter: MyString
+  al: MyString
+  proposal_recd: 2016-01-18
+  submitted_to_owner: 2016-01-18
+  approved_by_owner: 2016-01-18
+  billed: 2016-01-18
+  approx_value: 9.99
+  proposed_value: 9.99
+  submitted_value: 9.99
+  approved_value: 9.99
+  comments: MyText
+  engineer: MyString
+  bp: MyString
