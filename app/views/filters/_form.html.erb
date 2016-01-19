@@ -1,29 +1,18 @@
-<%= form_for(@filter) do |f| %>
+<%= bootstrap_form_for(@filter) do |f| %>
   <% if @filter.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@filter.errors.count, "error") %> prohibited this filter from being saved:</h2>
+  <div class="alert alert-danger alert-dismissible">
+    <a href="#" data-dismiss="alert" class="close">×</a>
+      <h4><%= pluralize(@filter.errors.count, "error") %> prohibited this filter from being saved:</h4>
 
       <ul>
       <% @filter.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li><strong><%= message %></strong></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
     <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :group %><br>
     <%= f.text_field :group %>
-  </div>
-  <div class="actions">
     <%= f.submit %>
-  </div>
 <% end %>

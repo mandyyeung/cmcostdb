@@ -12,7 +12,7 @@
   <tbody>
     <% @classifications.each do |classification| %>
       <tr>
-        <td><%= link_to classification.name, classification %></td>
+        <td><%= classification.name %></td>
         <td><%= link_to 'Edit', edit_classification_path(classification) %></td>
         <td><%= link_to 'Destroy', classification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -1,29 +1,19 @@
-<%= form_for(@subcontractor) do |f| %>
+<%= bootstrap_form_for(@subcontractor) do |f| %>
   <% if @subcontractor.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@subcontractor.errors.count, "error") %> prohibited this subcontractor from being saved:</h2>
+    <div class="alert alert-danger alert-dismissible">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+      <h4><%= pluralize(@subcontractor.errors.count, "error") %> prohibited this subcontractor from being saved:</h4>
 
       <ul>
       <% @subcontractor.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li><strong><%= message %></strong></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :trade %><br>
     <%= f.text_field :trade %>
-  </div>
-  <div class="field">
-    <%= f.label :contract_value %><br>
     <%= f.text_field :contract_value %>
-  </div>
-  <div class="actions">
     <%= f.submit %>
-  </div>
 <% end %>

@@ -21,6 +21,7 @@ gem 'font-awesome-rails'
 gem 'devise-bootstrap-views'
 gem 'jquery-datatables-rails', github: "rweng/jquery-datatables-rails", branch: "master"
 gem 'ajax-datatables-rails'
+gem 'bootstrap_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

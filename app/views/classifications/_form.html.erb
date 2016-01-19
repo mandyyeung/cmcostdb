@@ -1,21 +1,15 @@
-<%= form_for(@classification) do |f| %>
+<%= bootstrap_form_for(@classification) do |f| %>
   <% if @classification.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@classification.errors.count, "error") %> prohibited this classification from being saved:</h2>
-
+    <div class="alert alert-danger alert-dismissible">
+      <a href="#" data-dismiss="alert" class="close">×</a>
+      <h4><%= pluralize(@classification.errors.count, "error") %> prohibited this classification from being saved:</h4>
       <ul>
       <% @classification.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li><strong><%= message %></strong></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.text_field :name %>
+  <%= f.submit %>
 <% end %>

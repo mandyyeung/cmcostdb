@@ -14,7 +14,7 @@
   <tbody>
     <% @teams.each do |team| %>
       <tr>
-        <td><%= link_to team.first_name, team %></td>
+        <td><%= team.first_name %></td>
         <td><%= team.last_name %></td>
         <td><%= team.email %></td>
         <td><%= link_to 'Edit', edit_team_path(team) %></td>

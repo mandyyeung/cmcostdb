@@ -14,7 +14,7 @@
   <tbody>
     <% @filters.each do |filter| %>
       <tr>
-        <td><%= link_to filter.name, filter %></td>
+        <td><%= filter.name %></td>
         <td><%= filter.description %></td>
         <td><%= filter.group %></td>
         <td><%= link_to 'Edit', edit_filter_path(filter) %></td>

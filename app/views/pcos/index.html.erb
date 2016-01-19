@@ -30,9 +30,9 @@
         <td><%= pco.filter %></td>
         <td><%= pco.submitted_to_owner %></td>
         <td><%= pco.approved_by_owner %></td>
-        <td><%= pco.approx_value %></td>
-        <td><%= pco.submitted_value %></td>
-        <td><%= pco.approved_value %></td>
+        <td><%= number_to_currency(pco.approx_value) %></td>
+        <td><%= number_to_currency(pco.submitted_value) %></td>
+        <td><%= number_to_currency(pco.approved_value) %></td>
         <td><%= link_to 'Edit', edit_pco_path(pco) %></td>
         <td><%= link_to 'Destroy', pco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -14,9 +14,9 @@
   <tbody>
     <% @subcontractors.each do |subcontractor| %>
       <tr>
-        <td><%= link_to subcontractor.name, subcontractor %></td>
+        <td><%= subcontractor.name %></td>
         <td><%= subcontractor.trade %></td>
-        <td><%= subcontractor.contract_value %></td>
+        <td><%= number_to_currency(subcontractor.contract_value) %></td>
         <td><%= link_to 'Edit', edit_subcontractor_path(subcontractor) %></td>
         <td><%= link_to 'Destroy', subcontractor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
