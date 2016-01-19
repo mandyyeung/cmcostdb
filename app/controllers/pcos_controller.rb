@@ -28,7 +28,7 @@ class PcosController < ApplicationController
 
     respond_to do |format|
       if @pco.save
-        format.html { redirect_to @pco, notice: 'Pco was successfully created.' }
+        format.html { redirect_to @pco, notice: 'PCO was successfully created.' }
         format.json { render :show, status: :created, location: @pco }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PcosController < ApplicationController
   def update
     respond_to do |format|
       if @pco.update(pco_params)
-        format.html { redirect_to @pco, notice: 'Pco was successfully updated.' }
+        format.html { redirect_to pcos_path, notice: 'PCO was successfully updated.' }
         format.json { render :show, status: :ok, location: @pco }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PcosController < ApplicationController
   def destroy
     @pco.destroy
     respond_to do |format|
-      format.html { redirect_to pcos_url, notice: 'Pco was successfully destroyed.' }
+      format.html { redirect_to pcos_url, notice: 'PCO was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

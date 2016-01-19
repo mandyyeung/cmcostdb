@@ -28,7 +28,7 @@ class ClassificationsController < ApplicationController
 
     respond_to do |format|
       if @classification.save
-        format.html { redirect_to @classification, notice: 'Classification was successfully created.' }
+        format.html { redirect_to classifications_path, notice: 'Classification was successfully created.' }
         format.json { render :show, status: :created, location: @classification }
       else
         format.html { render :new }

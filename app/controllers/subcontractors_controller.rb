@@ -28,7 +28,7 @@ class SubcontractorsController < ApplicationController
 
     respond_to do |format|
       if @subcontractor.save
-        format.html { redirect_to @subcontractor, notice: 'Subcontractor was successfully created.' }
+        format.html { redirect_to subcontractors_path, notice: 'Subcontractor was successfully created.' }
         format.json { render :show, status: :created, location: @subcontractor }
       else
         format.html { render :new }

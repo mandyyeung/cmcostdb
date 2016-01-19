@@ -28,7 +28,7 @@ class FiltersController < ApplicationController
 
     respond_to do |format|
       if @filter.save
-        format.html { redirect_to @filter, notice: 'Filter was successfully created.' }
+        format.html { redirect_to filters_path, notice: 'Filter was successfully created.' }
         format.json { render :show, status: :created, location: @filter }
       else
         format.html { render :new }

@@ -19,7 +19,7 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'devise-bootstrap-views'
-gem 'jquery-datatables-rails'
+gem 'jquery-datatables-rails', github: "rweng/jquery-datatables-rails", branch: "master"
 gem 'ajax-datatables-rails'
 
 group :development, :test do

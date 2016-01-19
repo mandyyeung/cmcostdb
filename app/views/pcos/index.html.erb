@@ -1,27 +1,28 @@
-<h1>Listing Pcos</h1>
+<h1>PCO Log</h1>
 
-<table>
+<table id="pcos" class="display responsive no-wrap">
   <thead>
     <tr>
-      <th>Number</th>
+      <th>#</th>
       <th>Project</th>
       <th>Date</th>
       <th>Subcontractor</th>
       <th>Description</th>
       <th>Filter</th>
-      <th>Submitted to owner</th>
-      <th>Approved by owner</th>
-      <th>Approx value</th>
-      <th>Submitted value</th>
-      <th>Approved value</th>
-      <th colspan="3"></th>
+      <th>Submitted</th>
+      <th>Approved</th>
+      <th>Approx $</th>
+      <th>Submitted $</th>
+      <th>Approved $</th>
+      <th>Edit</th>
+      <th>Destroy</th>
     </tr>
   </thead>
 
   <tbody>
     <% @pcos.each do |pco| %>
       <tr>
-        <td><%= pco.number %></td>
+        <td><%= link_to pco.number, pco %></td>
         <td><%= pco.project %></td>
         <td><%= pco.date %></td>
         <td><%= pco.subcontractor %></td>
@@ -32,7 +33,6 @@
         <td><%= pco.approx_value %></td>
         <td><%= pco.submitted_value %></td>
         <td><%= pco.approved_value %></td>
-        <td><%= link_to 'Show', pco %></td>
         <td><%= link_to 'Edit', edit_pco_path(pco) %></td>
         <td><%= link_to 'Destroy', pco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -42,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Pco', new_pco_path %>
+<strong><%= link_to 'New PCO', new_pco_path %></strong>
