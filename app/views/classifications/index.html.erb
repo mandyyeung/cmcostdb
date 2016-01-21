@@ -1,4 +1,9 @@
-<h1>Classifications</h1>
+<div class="heading-container">
+  <span class="heading-text">Classifications</span>
+  <div class="pull-right">
+    <%= link_to "Export", classifications_path(format: "xls"), class: "btn btn-warning heading-button" %>
+  </div>
+</div>
 
 <table id="classifications" class="display responsive no-wrap table table-striped">
   <thead>

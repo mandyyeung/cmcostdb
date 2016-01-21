@@ -5,6 +5,11 @@ class PcosController < ApplicationController
   # GET /pcos.json
   def index
     @pcos = Pco.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @pcos.to_csv }
+      format.xls { send_data @pcos.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /pcos/1
@@ -28,7 +33,7 @@ class PcosController < ApplicationController
 
     respond_to do |format|
       if @pco.save
-        format.html { redirect_to @pco, notice: 'PCO was successfully created.' }
+        format.html { redirect_to pcos_path, notice: 'PCO was successfully created.' }
         format.json { render :show, status: :created, location: @pco }
       else
         format.html { render :new }

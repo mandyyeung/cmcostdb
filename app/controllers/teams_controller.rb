@@ -5,6 +5,11 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @teams.to_csv }
+      format.xls { send_data @teams.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /teams/1
@@ -42,7 +47,7 @@ class TeamsController < ApplicationController
   def update
     respond_to do |format|
       if @team.update(team_params)
-        format.html { redirect_to @team, notice: 'Team member was successfully updated.' }
+        format.html { redirect_to teams_path, notice: 'Team member was successfully updated.' }
         format.json { render :show, status: :ok, location: @team }
       else
         format.html { render :edit }

@@ -1,5 +1,9 @@
-<h1>Team Members</h1>
-
+<div class="heading-container">
+  <span class="heading-text">Team Members</span>
+  <div class="pull-right">
+    <%= link_to "Export", teams_path(format: "xls"), class: "btn btn-warning heading-button" %>
+  </div>
+</div>
 <table id="teams" class="display responsive no-wrap">
   <thead>
     <tr>

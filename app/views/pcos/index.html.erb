@@ -1,5 +1,9 @@
-<h1>PCO Log</h1>
-
+<div class="heading-container">
+  <span class="heading-text">PCO Log</span>
+  <div class="pull-right">
+    <%= link_to "Export", pcos_path(format: "xls"), class: "btn btn-warning heading-button" %>
+  </div>
+</div>
 <table id="pcos" class="display responsive no-wrap">
   <thead>
     <tr>

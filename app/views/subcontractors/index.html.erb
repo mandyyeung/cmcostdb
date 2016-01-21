@@ -1,4 +1,9 @@
-<h1>Subcontractors</h1>
+<div class="heading-container">
+  <span class="heading-text">Subcontractors</span>
+  <div class="pull-right">
+    <%= link_to "Export", subcontractors_path(format: "xls"), class: "btn btn-warning heading-button" %>
+  </div>
+</div>
 
 <table id="subcontractors" class="display responsive no-wrap">
   <thead>

@@ -5,6 +5,11 @@ class FiltersController < ApplicationController
   # GET /filters.json
   def index
     @filters = Filter.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @filters.to_csv }
+      format.xls { send_data @filters.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /filters/1
@@ -42,7 +47,7 @@ class FiltersController < ApplicationController
   def update
     respond_to do |format|
       if @filter.update(filter_params)
-        format.html { redirect_to @filter, notice: 'Filter was successfully updated.' }
+        format.html { redirect_to filters_path, notice: 'Filter was successfully updated.' }
         format.json { render :show, status: :ok, location: @filter }
       else
         format.html { render :edit }

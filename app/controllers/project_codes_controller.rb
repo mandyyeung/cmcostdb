@@ -5,6 +5,11 @@ class ProjectCodesController < ApplicationController
   # GET /project_codes.json
   def index
     @project_codes = ProjectCode.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @project_codes.to_csv }
+      format.xls { send_data @project_codes.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /project_codes/1

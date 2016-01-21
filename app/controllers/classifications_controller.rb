@@ -5,6 +5,11 @@ class ClassificationsController < ApplicationController
   # GET /classifications.json
   def index
     @classifications = Classification.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @classifications.to_csv }
+      format.xls { send_data @classifications.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /classifications/1
@@ -42,7 +47,7 @@ class ClassificationsController < ApplicationController
   def update
     respond_to do |format|
       if @classification.update(classification_params)
-        format.html { redirect_to @classification, notice: 'Classification was successfully updated.' }
+        format.html { redirect_to classifications_path, notice: 'Classification was successfully updated.' }
         format.json { render :show, status: :ok, location: @classification }
       else
         format.html { render :edit }

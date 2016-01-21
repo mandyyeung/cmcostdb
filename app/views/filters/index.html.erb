@@ -1,4 +1,9 @@
-<h1>Filters</h1>
+<div class="heading-container">
+  <span class="heading-text">Filters</span>
+  <div class="pull-right">
+    <%= link_to "Export", filters_path(format: "xls"), class: "btn btn-warning heading-button" %>
+  </div>
+</div>
 
 <table id="filters" class="display responsive no-wrap">
   <thead>

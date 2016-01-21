@@ -5,6 +5,11 @@ class SubcontractorsController < ApplicationController
   # GET /subcontractors.json
   def index
     @subcontractors = Subcontractor.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @subcontractors.to_csv }
+      format.xls { send_data @subcontractors.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /subcontractors/1
@@ -42,7 +47,7 @@ class SubcontractorsController < ApplicationController
   def update
     respond_to do |format|
       if @subcontractor.update(subcontractor_params)
-        format.html { redirect_to @subcontractor, notice: 'Subcontractor was successfully updated.' }
+        format.html { redirect_to subcontractors_path, notice: 'Subcontractor was successfully updated.' }
         format.json { render :show, status: :ok, location: @subcontractor }
       else
         format.html { render :edit }
