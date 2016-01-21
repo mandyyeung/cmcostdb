@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'pcos#index'
   resources :pcos
   resources :filters
-  resources :teams
+  resources :teams do
+    collection {post :import}
+  end
   resources :subcontractors
   resources :classifications
 end

@@ -66,6 +66,11 @@ class TeamsController < ApplicationController
     end
   end
 
+  def import
+    Team.import(params[:file])
+    redirect_to teams_url, notice: "Team Members imported."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_team
