@@ -1,0 +1,17 @@
+<%= bootstrap_form_for(@project_code) do |f| %>
+  <% if @project_code.errors.any? %>
+  <div class="alert alert-danger alert-dismissible">
+    <a href="#" data-dismiss="alert" class="close">×</a>
+      <h4><%= pluralize(@project_code.errors.count, "error") %> prohibited this project_code from being saved:</h4>
+
+      <ul>
+      <% @project_code.errors.full_messages.each do |message| %>
+        <li><strong><%= message %></strong></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= f.text_field :project %>
+    <%= f.text_field :code %>
+    <%= f.submit %>
+<% end %>

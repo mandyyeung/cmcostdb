@@ -1,0 +1,27 @@
+<h1>Project Codes</h1>
+
+<table id="project_codes" class="display responsive no-wrap">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Code</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @project_codes.each do |project_code| %>
+      <tr>
+        <td><%= project_code.project %></td>
+        <td><%= project_code.code %></td>
+        <td><%= link_to 'Edit', edit_project_code_path(project_code) %></td>
+        <td><%= link_to 'Destroy', project_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<strong><%= link_to 'New Project Code', new_project_code_path %></strong>
