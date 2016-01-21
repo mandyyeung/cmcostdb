@@ -66,6 +66,11 @@ class ProjectCodesController < ApplicationController
     end
   end
 
+  def import
+    ProjectCode.import(params[:file])
+    redirect_to project_codes_url, notice: "Project Codes imported."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project_code

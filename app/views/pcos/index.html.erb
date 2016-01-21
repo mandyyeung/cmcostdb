@@ -1,6 +1,7 @@
 <div class="heading-container">
   <span class="heading-text">PCO Log</span>
   <div class="pull-right">
+    <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importPCO">Import</a>
     <%= link_to "Export", pcos_path(format: "xls"), class: "btn btn-warning heading-button" %>
   </div>
 </div>
@@ -47,3 +48,20 @@
 <br>
 
 <strong><%= link_to 'New PCO', new_pco_path %></strong>
+
+<div class="modal fade" id="importPCO" tabindex="-1" role="dialog" aria-labelledby="ImportPCO">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Import PCO Items</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag import_teams_path, multipart: true do %>
+          <%= file_field_tag :file %><br>
+          <%= submit_tag "Import", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

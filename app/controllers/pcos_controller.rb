@@ -66,6 +66,11 @@ class PcosController < ApplicationController
     end
   end
 
+  def import
+    Pco.import(params[:file])
+    redirect_to pcos_url, notice: "PCOs imported."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pco

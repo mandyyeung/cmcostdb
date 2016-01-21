@@ -66,6 +66,11 @@ class FiltersController < ApplicationController
     end
   end
 
+  def import
+    Filter.import(params[:file])
+    redirect_to filters_url, notice: "Filters imported."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_filter

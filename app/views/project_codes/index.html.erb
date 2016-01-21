@@ -1,6 +1,7 @@
 <div class="heading-container">
   <span class="heading-text">Project Codes</span>
   <div class="pull-right">
+    <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importProjectCode">Import</a>
     <%= link_to "Export", project_codes_path(format: "xls"), class: "btn btn-warning heading-button" %>
   </div>
 </div>
@@ -30,3 +31,20 @@
 <br>
 
 <strong><%= link_to 'New Project Code', new_project_code_path %></strong>
+
+<div class="modal fade" id="importProjectCode" tabindex="-1" role="dialog" aria-labelledby="ImportProjectCode">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Import Project Codes</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag import_teams_path, multipart: true do %>
+          <%= file_field_tag :file %><br>
+          <%= submit_tag "Import", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

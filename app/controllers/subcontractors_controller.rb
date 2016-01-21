@@ -66,6 +66,11 @@ class SubcontractorsController < ApplicationController
     end
   end
 
+  def import
+    Subcontractor.import(params[:file])
+    redirect_to subcontractors_url, notice: "Subcontractors imported."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subcontractor
