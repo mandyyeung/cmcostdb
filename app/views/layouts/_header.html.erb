@@ -15,14 +15,16 @@
       <% if user_signed_in? %>
         <div id="navbar" class="navbar-collapse collapse">
           <div class="col-sm-3 col-md-3">
-            <form class="navbar-form" role="search">
-              <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search" name="q">
-                  <div class="input-group-btn">
-                      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                  </div>
+            <%= search_form_for @q, url: search_pcos_path, html: {method: :post, class: "navbar-form"} do |f| %>
+              <div class="input-group pull-right">
+                <%= f.search_field :requested_by_or_number_cont, placeholder: "Search...", class: "form-control clearable" %>
+                <span class="input-group-btn">
+                  <%= button_tag(type: 'submit', class: 'btn btn-default') do %>
+                    <span class="glyphicon glyphicon-search"></span>
+                  <% end %>
+                </span>
               </div>
-            </form>
+            <% end %>
           </div>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">

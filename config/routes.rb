@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     collection {post :import}
   end
   resources :pcos do
-    collection {post :import}
+    collection do
+      match 'search' => 'pcos#search', via: [:get, :post], as: :search
+      post :import
+    end
   end
   resources :filters do
     collection {post :import}

@@ -109,6 +109,8 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    polyamorous (1.1.0)
+      activerecord (>= 3.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -142,6 +144,12 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    ransack (1.6.3)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.1)
     rdoc (4.2.1)
       json (~> 1.4)
     responders (2.1.1)
@@ -212,6 +220,7 @@ DEPENDENCIES
   pg
   rails (= 4.2.4)
   rails_12factor
+  ransack
   roo
   roo-xls
   sass-rails (~> 5.0)

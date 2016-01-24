@@ -4,7 +4,7 @@ class PcosController < ApplicationController
   # GET /pcos
   # GET /pcos.json
   def index
-    @pcos = Pco.all
+    @pcos = @q.result(distinct: true)
     respond_to do |format|
       format.html
       format.csv { send_data @pcos.to_csv }
@@ -69,6 +69,12 @@ class PcosController < ApplicationController
   def import
     Pco.import(params[:file])
     redirect_to pcos_url, notice: "PCOs imported."
+  end
+
+  def search
+    @q = Pco.ransack(params[:q])
+    @pcos = @q.result(distinct: true)
+    render 'index'
   end
 
   private
