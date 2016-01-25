@@ -2,7 +2,7 @@
   <div class="heading-container">
     <span class="heading-text">PCO</span>
     <div class="pull-right">
-      <%= f.text_field :status %>
+      <%= f.text_field :status, inline: true %>
     </div>
   </div>
   <% if @pco.errors.any? %>
@@ -16,35 +16,75 @@
       </ul>
     </div>
   <% end %>
+  <br>
+        <div class="row">
+          <div class="col-md-2">
+            <%= f.text_field :number %>
+          </div>
+          <div class="col-md-3">
+            <%= f.collection_select :requested_by, Team.all, :full_name, :full_name, include_blank: "[ None Selected ]" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.collection_select :project, ProjectCode.all, :code, :project_code, include_blank: "[ None Selected ]" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.date_field :date %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <%= f.collection_select :subcontractor, Subcontractor.all, :name, :name, include_blank: "[ None Selected ]" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.text_field :bp, label: "BP#", disabled: true%>
+          </div>
+          <div class="col-md-3">
+            <%= f.collection_select :trade, Subcontractor.all, :trade, :trade, include_blank: "[ None Selected ]" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.text_field :engineer, disabled: true %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <%= f.text_field :proposal_num, label: "Proposal#" %>
+            <%= f.text_field :ref_doc %>
+          </div>
+          <div class="col-md-10">
+            <%= f.text_area :description, rows: "4" %>
+          </div>
+        </div>
+      <div class="row form-groupbox">
+        <div class="col-md-6">
+          <%= f.collection_select :classification, Classification.all, :name, :name, include_blank: "[ None Selected ]" %>
+          <%= f.collection_select :filter, Filter.all, :name, :name, include_blank: "[ None Selected ]" %>
+          <%= f.text_field :al, label: "AL#" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.check_box :work_completed %>
+          <%= f.check_box :insurance_claim %>
+          <%= f.check_box :backcharge %>
+        </div>
+      </div>
+      <div class="row form-groupbox">
+        <div class="col-md-6">
+          <%= f.date_field :proposal_recd, label: "Proposal rec'd", append: "<i class='fa fa-calendar'></i>".html_safe %>
+          <%= f.date_field :submitted_to_owner, append: "<i class='fa fa-calendar'></i>".html_safe %>
+          <%= f.date_field :approved_by_owner, append: "<i class='fa fa-calendar'></i>".html_safe %>
+          <%= f.date_field :billed, append: "<i class='fa fa-calendar'></i>".html_safe %>
+        </div>
+        <div class="col-md-6">
+          <%= f.text_field :approx_value, prepend: "<i class='fa fa-usd'></i>".html_safe %>
+          <%= f.text_field :proposed_value, prepend: "<i class='fa fa-usd'></i>".html_safe %>
+          <%= f.text_field :submitted_value, prepend: "<i class='fa fa-usd'></i>".html_safe %>
+          <%= f.text_field :approved_value, prepend: "<i class='fa fa-usd'></i>".html_safe %>
+        </div>
+      </div>
+      <div class="row form-groupbox">
+        <div class="col-md-12">
+          <%= f.text_area :comments %>
+        </div>
+      </div>
+      <%= f.submit "Submit" %>
 
-    <%= f.text_field :number %>
-    <%= f.collection_select :requested_by, Team.all, :full_name, :full_name, include_blank: "[ None Selected ]" %>
-    <%= f.collection_select :project, ProjectCode.all, :code, :project_code, include_blank: "[ None Selected ]" %>
-    <%= f.date_field :date %>
-    <%= f.collection_select :subcontractor, Subcontractor.all, :name, :name, include_blank: "[ None Selected ]" %>
-    <%= f.collection_select :trade, Subcontractor.all, :trade, :trade, include_blank: "[ None Selected ]" %>
-    <%= f.text_field :proposal_num, label: "Proposal#" %>
-    <%= f.text_field :ref_doc %>
-    <%= f.text_area :description %>
-    <%= f.collection_select :classification, Classification.all, :name, :name, include_blank: "[ None Selected ]" %>
-    <%= f.check_box :work_completed %>
-    <%= f.check_box :insurance_claim %>
-    <%= f.check_box :backcharge %>
-    <%= f.collection_select :filter, Filter.all, :name, :name, include_blank: "[ None Selected ]" %>
-    <%= f.text_field :al, label: "AL#" %>
-    <%= f.date_field :proposal_recd, label: "Proposal rec'd" %>
-    <%= f.date_field :submitted_to_owner %>
-    <%= f.date_field :approved_by_owner %>
-    <%= f.date_field :billed %>
-    <%= f.text_field :approx_value %>
-    <%= f.text_field :proposed_value %>
-    <%= f.text_field :submitted_value %>
-    <%= f.text_field :approved_value %>
-    <%= f.text_area :comments %>
-    <p>
-      Not Used:
-    </p>
-    <%= f.text_field :engineer, disabled: true %>
-    <%= f.text_field :bp, label: "BP#", disabled: true%>
-    <%= f.submit "Submit" %>
 <% end %>
