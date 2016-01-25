@@ -14,7 +14,7 @@
       <th>Description</th>
       <th>Group</th>
       <th>Edit</th>
-      <th>Destroy</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -25,7 +25,7 @@
         <td><%= filter.description %></td>
         <td><%= filter.group %></td>
         <td><%= link_to 'Edit', edit_filter_path(filter) %></td>
-        <td><%= link_to 'Destroy', filter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', filter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

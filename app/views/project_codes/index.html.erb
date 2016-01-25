@@ -13,7 +13,7 @@
       <th>Project</th>
       <th>Code</th>
       <th>Edit</th>
-      <th>Destroy</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -23,7 +23,7 @@
         <td><%= project_code.project %></td>
         <td><%= project_code.code %></td>
         <td><%= link_to 'Edit', edit_project_code_path(project_code) %></td>
-        <td><%= link_to 'Destroy', project_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', project_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

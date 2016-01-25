@@ -13,7 +13,7 @@
       <th>Name</th>
       <th>Trade</th>
       <th>Edit</th>
-      <th>Destroy</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -23,7 +23,7 @@
         <td><%= subcontractor.name %></td>
         <td><%= subcontractor.trade %></td>
         <td><%= link_to 'Edit', edit_subcontractor_path(subcontractor) %></td>
-        <td><%= link_to 'Destroy', subcontractor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', subcontractor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

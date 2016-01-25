@@ -1,23 +1,23 @@
 <ul class="sidebar-nav">
   <li class="project-name">
-    Menu
+    <%= fa_icon "navicon"%>Menu
   </li>
   <li>
-    <%= link_to('PCO Log', pcos_path) %>
+    <%= link_to("#{fa_icon 'file-text-o'} PCO Log".html_safe, pcos_path)%>
   </li>
   <li>
-    <%= link_to('Subcontractors', subcontractors_path) %>
+    <%= link_to("#{fa_icon 'user'} Subcontractors".html_safe, subcontractors_path) %>
   </li>
   <li>
-    <%= link_to('Team Members', teams_path) %>
+    <%= link_to("#{fa_icon 'child'} Team Members".html_safe, teams_path) %>
   </li>
   <li>
-    <%= link_to('Classifications', classifications_path) %>
+    <%= link_to("#{fa_icon 'pencil-square-o'} Classifications".html_safe, classifications_path) %>
   </li>
   <li>
-    <%= link_to('Filters', filters_path) %>
+    <%= link_to("#{fa_icon 'tags'} Filters".html_safe, filters_path) %>
   </li>
   <li>
-    <%= link_to('Project Codes', project_codes_path) %>
+    <%= link_to("#{fa_icon 'pencil'} Project Codes".html_safe, project_codes_path) %>
   </li>
 </ul>
