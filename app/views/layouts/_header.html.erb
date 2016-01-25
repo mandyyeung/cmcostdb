@@ -9,15 +9,15 @@
         </button>
         <strong><%= link_to('CM CostDb', root_path, class: "navbar-brand")%></strong>
         <ul class="nav navbar-nav">
-          <li><a href="#menu-toggle" id="menu-toggle">Toggle Menu</a></li>
+          <li><a href="#menu-toggle" id="menu-toggle"><%= fa_icon "align-justify" %></a></li>
         </ul>
       </div>
       <% if user_signed_in? %>
         <div id="navbar" class="navbar-collapse collapse">
-          <div class="col-sm-3 col-md-3">
+          <!-- <div class="col-sm-3 col-md-3">
             <%= search_form_for @q, url: search_pcos_path, html: {method: :post, class: "navbar-form"} do |f| %>
               <div class="input-group pull-right">
-                <%= f.search_field :requested_by_or_number_cont, placeholder: "Search...", class: "form-control clearable" %>
+                <%= f.search_field :requested_by_or_description_cont, placeholder: "Search...", class: "form-control clearable" %>
                 <span class="input-group-btn">
                   <%= button_tag(type: 'submit', class: 'btn btn-default') do %>
                     <span class="glyphicon glyphicon-search"></span>
@@ -25,7 +25,7 @@
                 </span>
               </div>
             <% end %>
-          </div>
+          </div> -->
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name + " " + current_user.last_name %> <span class="caret"></span></a>

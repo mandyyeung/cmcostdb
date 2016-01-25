@@ -1,8 +1,9 @@
 <div class="heading-container">
   <span class="heading-text">PCO Log</span>
   <div class="pull-right">
-    <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importPCO">Import</a>
-    <%= link_to "Export", pcos_path(format: "xls"), class: "btn btn-warning heading-button" %>
+    <!-- <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importPCO">Import</a> -->
+    <%= link_to 'New', new_pco_path, class: "btn btn-warning heading-button" %>
+    <%= link_to "Export", pcos_path(format: "xls"), class: "btn btn-default heading-button" %>
   </div>
 </div>
 <table id="pcos" class="display responsive no-wrap">
@@ -10,17 +11,14 @@
     <tr>
       <th>#</th>
       <th>Project</th>
-      <th>Date</th>
       <th>Subcontractor</th>
       <th>Description</th>
       <th>Filter</th>
-      <th>Submitted</th>
-      <th>Approved</th>
       <th>Approx $</th>
       <th>Submitted $</th>
       <th>Approved $</th>
+      <th>Status</th>
       <th>Edit</th>
-      <th>Destroy</th>
     </tr>
   </thead>
 
@@ -29,25 +27,19 @@
       <tr>
         <td><%= link_to pco.number, pco %></td>
         <td><%= pco.project %></td>
-        <td><%= pco.date %></td>
         <td><%= pco.subcontractor %></td>
         <td><%= pco.description %></td>
         <td><%= pco.filter %></td>
-        <td><%= pco.submitted_to_owner %></td>
-        <td><%= pco.approved_by_owner %></td>
         <td><%= number_to_currency(pco.approx_value) %></td>
         <td><%= number_to_currency(pco.submitted_value) %></td>
         <td><%= number_to_currency(pco.approved_value) %></td>
+        <td><span class="label"><%= pco.status %></span></td>
         <td><%= link_to 'Edit', edit_pco_path(pco) %></td>
-        <td><%= link_to 'Destroy', pco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<strong><%= link_to 'New PCO', new_pco_path %></strong>
 
 <div class="modal fade" id="importPCO" tabindex="-1" role="dialog" aria-labelledby="ImportPCO">
   <div class="modal-dialog" role="document">

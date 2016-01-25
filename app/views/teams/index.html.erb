@@ -1,8 +1,9 @@
 <div class="heading-container">
   <span class="heading-text">Team Members</span>
   <div class="pull-right">
-    <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importTeam">Import</a>
-    <%= link_to "Export", teams_path(format: "xls"), class: "btn btn-warning heading-button" %>
+    <!-- <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importTeam">Import</a> -->
+    <%= link_to 'New', new_team_path, class: "btn btn-warning heading-button" %>
+    <%= link_to "Export", teams_path(format: "xls"), class: "btn btn-default heading-button" %>
   </div>
 </div>
 <table id="teams" class="display responsive no-wrap">
@@ -29,9 +30,6 @@
   </tbody>
 </table>
 
-<br>
-
-<strong><%= link_to 'New Team Member', new_team_path %></strong>
 
 <div class="modal fade" id="importTeam" tabindex="-1" role="dialog" aria-labelledby="ImportTeam">
   <div class="modal-dialog" role="document">

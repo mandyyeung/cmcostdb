@@ -1,8 +1,9 @@
 <div class="heading-container">
   <span class="heading-text">Subcontractors</span>
   <div class="pull-right">
-    <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importSubcontractor">Import</a>
-    <%= link_to "Export", subcontractors_path(format: "xls"), class: "btn btn-warning heading-button" %>
+    <!-- <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importSubcontractor">Import</a> -->
+    <%= link_to 'New', new_subcontractor_path, class: "btn btn-warning heading-button" %>
+    <%= link_to "Export", subcontractors_path(format: "xls"), class: "btn btn-default heading-button" %>
   </div>
 </div>
 
@@ -11,7 +12,6 @@
     <tr>
       <th>Name</th>
       <th>Trade</th>
-      <th>Contract Value</th>
       <th>Edit</th>
       <th>Destroy</th>
     </tr>
@@ -22,7 +22,6 @@
       <tr>
         <td><%= subcontractor.name %></td>
         <td><%= subcontractor.trade %></td>
-        <td><%= number_to_currency(subcontractor.contract_value) %></td>
         <td><%= link_to 'Edit', edit_subcontractor_path(subcontractor) %></td>
         <td><%= link_to 'Destroy', subcontractor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -30,9 +29,6 @@
   </tbody>
 </table>
 
-<br>
-
-<strong><%= link_to 'New Subcontractor', new_subcontractor_path %></strong>
 
 <div class="modal fade" id="importSubcontractor" tabindex="-1" role="dialog" aria-labelledby="ImportSubcontractor">
   <div class="modal-dialog" role="document">

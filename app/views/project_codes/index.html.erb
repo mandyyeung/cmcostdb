@@ -1,8 +1,9 @@
 <div class="heading-container">
   <span class="heading-text">Project Codes</span>
   <div class="pull-right">
-    <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importProjectCode">Import</a>
-    <%= link_to "Export", project_codes_path(format: "xls"), class: "btn btn-warning heading-button" %>
+    <!-- <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importProjectCode">Import</a> -->
+    <%= link_to 'New', new_project_code_path, class: "btn btn-warning heading-button" %>
+    <%= link_to "Export", project_codes_path(format: "xls"), class: "btn btn-default heading-button" %>
   </div>
 </div>
 
@@ -28,9 +29,6 @@
   </tbody>
 </table>
 
-<br>
-
-<strong><%= link_to 'New Project Code', new_project_code_path %></strong>
 
 <div class="modal fade" id="importProjectCode" tabindex="-1" role="dialog" aria-labelledby="ImportProjectCode">
   <div class="modal-dialog" role="document">

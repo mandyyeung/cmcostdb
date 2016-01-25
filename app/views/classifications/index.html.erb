@@ -1,8 +1,9 @@
 <div class="heading-container">
   <span class="heading-text">Classifications</span>
   <div class="pull-right">
-    <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importClassification">Import</a>
-    <%= link_to "Export", classifications_path(format: "xls"), class: "btn btn-warning heading-button" %>
+    <!-- <a href="#" class="btn btn-success heading-button" data-toggle="modal" data-target="#importClassification">Import</a> -->
+    <%= link_to "New", new_classification_path, class: "btn btn-warning heading-button" %>
+    <%= link_to "Export", classifications_path(format: "xls"), class: "btn btn-default heading-button" %>
   </div>
 </div>
 
@@ -25,10 +26,6 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<strong><%= link_to 'New Classification', new_classification_path %></strong>
 
 <div class="modal fade" id="importClassification" tabindex="-1" role="dialog" aria-labelledby="ImportClassification">
   <div class="modal-dialog" role="document">

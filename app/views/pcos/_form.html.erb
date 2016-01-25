@@ -19,7 +19,7 @@
 
     <%= f.text_field :number %>
     <%= f.collection_select :requested_by, Team.all, :full_name, :full_name, include_blank: "[ None Selected ]" %>
-    <%= f.collection_select :project, ProjectCode.all, :project_code, :project_code, include_blank: "[ None Selected ]" %>
+    <%= f.collection_select :project, ProjectCode.all, :code, :project_code, include_blank: "[ None Selected ]" %>
     <%= f.date_field :date %>
     <%= f.collection_select :subcontractor, Subcontractor.all, :name, :name, include_blank: "[ None Selected ]" %>
     <%= f.collection_select :trade, Subcontractor.all, :trade, :trade, include_blank: "[ None Selected ]" %>
